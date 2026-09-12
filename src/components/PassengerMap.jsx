@@ -22,7 +22,7 @@ export default function PassengerMap({ bus, stops, destinationId }) {
         attribution='&copy; OpenStreetMap contributors'
       />
       <FollowBus position={position} />
-      {path.length > 0 && <Polyline positions={path} pathOptions={{ color: '#38bdf8', weight: 3, opacity: 0.4 }} />}
+      {path.length > 0 && <Polyline positions={path} pathOptions={{ color: '#f97316', weight: 3, opacity: 0.7 }} />}
       {stops.map((s) => (
         <Marker key={s.id} position={[s.lat, s.lng]} icon={stopIcon(s.id === destinationId)}>
           <Tooltip direction="top" offset={[0, -6]} opacity={0.9}>
