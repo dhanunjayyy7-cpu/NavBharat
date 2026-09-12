@@ -16,10 +16,10 @@ export default function PassengerMap({ bus, stops, destinationId }) {
   const path = ROUTES[bus.route_number]?.path ?? []
 
   return (
-    <MapContainer center={position} zoom={14} zoomControl={false} className="map-dark h-full w-full">
+    <MapContainer center={position} zoom={13} zoomControl={false} className="h-full w-full" style={{ background: '#1a1a2e' }}>
       <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; OpenStreetMap contributors'
+        url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+        attribution='&copy; OpenStreetMap &copy; CARTO'
       />
       <FollowBus position={position} />
       {path.length > 0 && <Polyline positions={path} pathOptions={{ color: '#f97316', weight: 3, opacity: 0.7 }} />}
